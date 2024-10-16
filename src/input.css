@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-Raleway overflow-x-hidden;
+  }
+  .container {
+    @apply max-w-[1600px] w-full px-4 mx-auto;
+  }
+}
+
+@layer components {
+  /* BUTTON */
+  .btn {
+    @apply py-3 px-6 bg-transparent border-transparent rounded-lg;
+  }
+  .btn.faqs {
+    @apply border border-black hover:bg-tertiary hover:text-white;
+  }
+  .btn.facebook {
+    @apply border border-transparent bg-primary text-white hover:bg-blue-500;
+  }
+  .btn.give {
+    @apply border border-transparent bg-secondary text-white px-10;
+  }
+  .btn.footer--give {
+    @apply border border-transparent bg-tertiary text-white hover:bg-secondary px-24 py-3;
+  }
+  .btn.footer--faq {
+    @apply border border-tertiary bg-white text-black hover:bg-secondary hover:text-white px-24 py-3;
+  }
+
+  /* BANNER MENU */
+  .bannerMenu {
+    @apply flex flex-col lg:items-start text-center items-center mb-20;
+  }
+
+  .bannerMenu li {
+    @apply text-xl;
+  }
+  .bannerMenu li.active {
+    @apply text-tertiary border-b border-tertiary;
+  }
+
+  .aboutSchool {
+    @apply hidden;
+  }
+  .aboutSchool.active {
+    @apply block;
+  }
+
+  /* ACCORDIONS */
+  .banner__details {
+    @apply bg-slate-200 mb-5;
+  }
+
+  .banner__details h4,
+  .banner__details i {
+    @apply transition-all cursor-pointer px-3 py-2 justify-between items-center;
+  }
+
+  .banner__details i.open {
+    @apply rotate-[900deg] transition-all;
+  }
+
+  .banner__details ul {
+    @apply bg-slate-200 h-auto max-h-0 overflow-hidden transition-all delay-100 duration-500;
+  }
+  .banner__details ul.open {
+    @apply max-h-[50rem] bg-slate-200 transition-all delay-100 duration-1000;
+  }
+  .banner__details li {
+    @apply lg:w-[65rem] flex items-start gap-2 mb-2 text-lg;
+  }
+  /* TOGGLE */
+  .header__nav.open {
+        @apply fixed lg:hidden visible top-[4.6rem] h-screen w-full bg-white duration-700 overflow-y-hidden flex flex-col justify-start items-center  pt-10 transition-all duration-700 ease-in-out overflow-y-hidden right-0;
+  }
+  /* .transparent {
+    @apply hidden transition-all duration-700 ease-in-out delay-700 left-52;
+  } */
+  .header__nav.open li{
+    @apply border-none mb-[-2rem] justify-center top-0;
+  }
+  .header__nav.open span li{
+    @apply mb-8;
+  }
+  .toggle__menu {
+    @apply flex flex-col gap-1 z-50 lg:hidden md:hidden;
+  }
+  .toggle__menu span {
+    @apply content-[*] bg-primary w-10 h-1 rounded-lg 
+        duration-700 ease-in-out;
+  }
+
+  .toggle__menu.open span:first-child {
+    @apply w-6 translate-x-4 rotate-[38deg];
+  }
+  .toggle__menu.open span:last-child {
+    @apply w-6 translate-x-4 rotate-[-38deg];
+  }
+}
